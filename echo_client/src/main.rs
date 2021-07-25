@@ -4,7 +4,6 @@ use std::io::{Write, BufReader, BufRead};
 fn main() -> std::io::Result<()> {
 
     let mut stream = TcpStream::connect("127.0.0.1:6666")?;
-
     for _ in 0..10 {
         let mut input = String::new();
         std::io::stdin()
