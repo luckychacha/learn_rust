@@ -2,5 +2,8 @@
 
 members = [
     "echo_server",
-    "echo_client"
+    "echo_client",
+    "traffic_light",
+    "calculate_sum",
+    "calculate_area"
 ]
