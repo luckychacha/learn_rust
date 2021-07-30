@@ -2,11 +2,12 @@
 fn calculate_sum(nums: &[u32]) -> Option<u32> {
     let mut sum: u32 = 0;
 
-    for item in nums.iter() {
-        if sum.overflowing_add(*item).1 {
+    for item in nums {
+        let tmp = sum.checked_add(*item);
+        if tmp.is_none() {
             return None;
         }
-        sum = sum.overflowing_add(*item).0;
+        sum = tmp.unwrap()
     }
 
     Some(sum)

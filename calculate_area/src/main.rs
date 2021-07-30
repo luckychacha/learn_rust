@@ -6,7 +6,7 @@ pub trait CalculateArea {
 
 impl CalculateArea for Triangle {
     fn calculate(&self) -> f64 {
-        self.length * self.width * 0.5
+        self.height * self.base * 0.5
     }
 }
 
@@ -22,24 +22,47 @@ impl CalculateArea for Rectangle {
     }
 }
 
+#[derive(Debug)]
 struct Triangle {
-    length: f64,
-    width: f64
+    base: f64,
+    height: f64
 }
 
+impl Triangle {
+    fn new(base: f64, height: f64) -> Triangle {
+        Triangle {
+            base,
+            height
+        }
+    }
+}
+
+#[derive(Debug)]
 struct Rectangle {
     length: f64,
     width: f64
 }
 
+impl Rectangle {
+    fn new(length: f64, width: f64) -> Rectangle {
+        Rectangle {
+            length,
+            width
+        }
+    }
+}
+
+#[derive(Debug)]
 pub struct Circle {
     radius: f64
 }
 
-#[derive(Debug)]
-struct OtherShape {
-    length: f64,
-    width: f64
+impl Circle {
+    fn new(radius: f64) -> Circle {
+        Circle {
+            radius
+        }
+    }
 }
 
 fn area<T: CalculateArea>(t: &T) -> f64 {
@@ -47,14 +70,14 @@ fn area<T: CalculateArea>(t: &T) -> f64 {
 }
 
 fn main() {
-    let circle = Circle {radius: 2_f64};
+    let circle = Circle::new(2_f64);
     println!("{:?}", (area(&circle)));
 
-    let other_shape = OtherShape {
-        length: 2_f64,
-        width: 3_f64
-    };
-    println!("{:?}", other_shape);
+    let rectangle = Rectangle::new(2_f64, 3.5_f64);
+    println!("{:?}", (area(&rectangle)));
+
+    let triangle = Triangle::new(2_f64, 4.5_f64);
+    println!("{:?}", (area(&triangle)));
 }
 
 #[cfg(test)]
@@ -63,7 +86,7 @@ mod test {
 
     #[test]
     fn circle_area() {
-        let circle = Circle {radius: 2_f64};
+        let circle = Circle::new(2_f64);
         assert_eq!((area(&circle)), 2_f64.powf(2_f64) * PI);
     }
 }

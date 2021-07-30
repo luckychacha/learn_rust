@@ -1,3 +1,4 @@
+use std::time::Duration;
 
 enum TrafficLight {
     Red,
@@ -5,21 +6,21 @@ enum TrafficLight {
     Yellow
 }
 
-pub trait TrafficLightTime {
-    fn get_light_time(&self) -> u32;
+pub trait TrafficLightDuration {
+    fn get_duration(&self) -> Duration;
 }
 
-impl TrafficLightTime for TrafficLight {
-    fn get_light_time(&self) -> u32 {
+impl TrafficLightDuration for TrafficLight {
+    fn get_duration(&self) -> Duration {
         match &self {
             TrafficLight::Red => {
-                1
+                Duration::from_secs(1)
             }
             TrafficLight::Green => {
-                2
+                Duration::from_secs(2)
             }
             TrafficLight::Yellow => {
-                3
+                Duration::from_secs(3)
             }
         }
     }
@@ -28,7 +29,7 @@ impl TrafficLightTime for TrafficLight {
 fn main() {
     println!("Hello, world!");
 
-    println!("{:?}", TrafficLight::Red.get_light_time());
-    println!("{:?}", TrafficLight::Green.get_light_time());
-    println!("{:?}", TrafficLight::Yellow.get_light_time());
+    println!("{:?}", TrafficLight::Red.get_duration());
+    println!("{:?}", TrafficLight::Green.get_duration());
+    println!("{:?}", TrafficLight::Yellow.get_duration());
 }
