@@ -1,3 +1,4 @@
+use std::ops::Add;
 
 // It should remove all values from list a, which are present in list b keeping their order.
 pub fn array_diff<T: PartialEq>(a: Vec<T>, b: Vec<T>) -> Vec<T> {
@@ -132,4 +133,31 @@ pub fn sum_pairs(ints: &[i8], s: i8) -> Option<(i8, i8)> {
     }
 
     None
+}
+
+
+pub fn rot13(message: &str) -> String {
+    // ROT13 is a simple letter substitution cipher
+    // that replaces a letter with the letter 13 letters
+    // after it in the alphabet. ROT13 is an example of
+    // the Caesar cipher.
+    message.chars().map(|c| {
+        match c.is_ascii_alphabetic() {
+            true => {
+                let first = match c.is_ascii_uppercase() {
+                    true => {
+                         'A' as u8
+                    }
+                    false => {
+                        'a' as u8
+                    }
+                };
+                (first + (c as u8 + 13 - first) % 26) as char
+            }
+            false => {
+                c
+            }
+        }
+
+    }).collect()
 }
