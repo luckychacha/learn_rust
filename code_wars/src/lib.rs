@@ -171,18 +171,19 @@ pub fn print(n: i32) -> Option<String> {
       assert_eq!(print(0),None);
       assert_eq!(print(1), Some("*\n".to_string()) );
      */
-    if 0 >= n || n % 2 == 0 {
+    if n % 2 == 0 || n <= 0 {
         return None
     }
 
-    let m = n as usize;
-    let diamond: String = (1..=m)
-        .chain((1..m).rev())
+    let n = n as usize;
+    let diamond: String = (1..=n)
+        .chain((1..n).rev())
         .step_by(2)
         .map(|i| {
-            format!("{}{}\n", " ".repeat((m - i) / 2), "*".repeat(i))
+            format!("{}{}\n", " ".repeat((n-i)/2),"*".repeat(i))
         })
         .collect();
 
     Some(diamond)
+
 }
