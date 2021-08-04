@@ -1,4 +1,4 @@
-use code_wars::{array_diff, persistence, sum_pairs, rot13};
+use code_wars::{array_diff, persistence, sum_pairs, rot13, print};
 
 fn main() {
     println!("{:?}", array_diff(vec![1,2,2,2,3], vec![2]));
@@ -12,6 +12,9 @@ fn main() {
 
     println!("{}", rot13(&String::from("Nibvq fhpprff ng nyy pbfgf!")));
     println!("{}", rot13(&String::from("Nibvq   JfhpprffJngJnyyJpbfgfJ")));
+
+    println!("{:?}",print(5));
+
 }
 
 #[cfg(test)]
@@ -36,5 +39,10 @@ mod test {
         assert_eq!(sum_pairs(&l6, 8), Some((4, 4)));
         assert_eq!(sum_pairs(&l7, 0), Some((0, 0)));
         assert_eq!(sum_pairs(&l8, 10), Some((13, -3)));
+    }
+
+    #[test]
+    fn test_print() {
+        println!("{:?}",print(5));
     }
 }
