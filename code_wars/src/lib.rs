@@ -199,3 +199,27 @@ pub fn product_fib(prod: u64) -> (u64, u64, bool) {
     }
     (a, b, a * b == prod)
 }
+
+pub fn bouncing_ball(h: f64,  bounce: f64,  window: f64) -> i32 {
+    let mut res = 0;
+
+    if bounce.ge(&1_f64) || bounce.le(&0_f64) {
+        return -1;
+    }
+    if h.le(&window) {
+        return -1
+    }
+
+    let mut h = h;
+
+    while h.gt(&window) {
+        println!("h:{}", h);
+        res += 1;
+        if res % 2 == 1 {
+            h *= bounce;
+        }
+
+    } 
+
+    res
+}

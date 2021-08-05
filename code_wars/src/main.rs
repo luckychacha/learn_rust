@@ -1,4 +1,4 @@
-use code_wars::{array_diff, persistence, print, product_fib, rot13, sum_pairs};
+use code_wars::{array_diff, bouncing_ball, persistence, print, product_fib, rot13, sum_pairs};
 
 fn main() {
     println!("{:?}", array_diff(vec![1,2,2,2,3], vec![2]));
@@ -6,16 +6,21 @@ fn main() {
     // 4
     println!("res:{}", persistence(999));
     // 3
-    println!("res:{}", persistence(39));
+    // println!("res:{}", persistence(39));
     // 0
-    println!("res:{}", persistence(4));
+    // println!("res:{}", persistence(4));
 
     println!("{}", rot13(&String::from("Nibvq fhpprff ng nyy pbfgf!")));
-    println!("{}", rot13(&String::from("Nibvq   JfhpprffJngJnyyJpbfgfJ")));
 
     println!("{:?}",print(5));
     println!("{:?}", product_fib(4895));
-    println!("{:?}", product_fib(5895));
+    // println!("{:?}", product_fib(5895));
+
+    println!("bouncing_ball:{:?}", bouncing_ball(3.0, 0.66, 1.5));
+    println!("bouncing_ball:{:?}", bouncing_ball(2.0, 0.5, 1.0));
+    println!("bouncing_ball:{:?}", bouncing_ball(30.0, 0.66, 1.5));
+    println!("bouncing_ball:{:?}", bouncing_ball(40.0, 0.4, 10.0));
+    println!("bouncing_ball:{:?}", bouncing_ball(10.0, 0.6, 10.0));
 }
 
 #[cfg(test)]
