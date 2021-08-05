@@ -1,4 +1,4 @@
-use code_wars::{array_diff, persistence, sum_pairs, rot13, print};
+use code_wars::{array_diff, persistence, print, product_fib, rot13, sum_pairs};
 
 fn main() {
     println!("{:?}", array_diff(vec![1,2,2,2,3], vec![2]));
@@ -14,7 +14,8 @@ fn main() {
     println!("{}", rot13(&String::from("Nibvq   JfhpprffJngJnyyJpbfgfJ")));
 
     println!("{:?}",print(5));
-
+    println!("{:?}", product_fib(4895));
+    println!("{:?}", product_fib(5895));
 }
 
 #[cfg(test)]

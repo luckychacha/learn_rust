@@ -187,3 +187,15 @@ pub fn print(n: i32) -> Option<String> {
     Some(diamond)
 
 }
+
+pub fn product_fib(prod: u64) -> (u64, u64, bool) {
+    let mut a = 0;
+    let mut b = 1;
+
+    while a * b < prod {
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+    (a, b, a * b == prod)
+}
