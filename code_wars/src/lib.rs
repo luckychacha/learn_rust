@@ -1,3 +1,4 @@
+use std::iter::Map;
 use std::ops::Add;
 
 // It should remove all values from list a, which are present in list b keeping their order.
@@ -222,4 +223,23 @@ pub fn bouncing_ball(h: f64,  bounce: f64,  window: f64) -> i32 {
     } 
 
     res
+}
+
+pub fn anagrams(word: &str, words: &[String]) -> Vec<String> {
+    // your code here
+
+    let example: Vec<char> = atoz(word);
+
+    words.iter()
+        .filter(|word| {
+            atoz(&word).eq(&example)
+        })
+        .cloned()
+        .collect::<Vec<_>>()
+}
+
+fn atoz(word: &str) -> Vec<char> {
+    let mut atoz = word.chars().collect::<Vec<_>>();
+    atoz.sort();
+    atoz
 }

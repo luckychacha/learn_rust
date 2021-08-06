@@ -1,4 +1,4 @@
-use code_wars::{array_diff, bouncing_ball, persistence, print, product_fib, rot13, sum_pairs};
+use code_wars::{anagrams, array_diff, bouncing_ball, persistence, print, product_fib, rot13, sum_pairs};
 
 fn main() {
     println!("{:?}", array_diff(vec![1,2,2,2,3], vec![2]));
@@ -17,10 +17,16 @@ fn main() {
     // println!("{:?}", product_fib(5895));
 
     println!("bouncing_ball:{:?}", bouncing_ball(3.0, 0.66, 1.5));
-    println!("bouncing_ball:{:?}", bouncing_ball(2.0, 0.5, 1.0));
-    println!("bouncing_ball:{:?}", bouncing_ball(30.0, 0.66, 1.5));
-    println!("bouncing_ball:{:?}", bouncing_ball(40.0, 0.4, 10.0));
-    println!("bouncing_ball:{:?}", bouncing_ball(10.0, 0.6, 10.0));
+    // println!("bouncing_ball:{:?}", bouncing_ball(2.0, 0.5, 1.0));
+    // println!("bouncing_ball:{:?}", bouncing_ball(30.0, 0.66, 1.5));
+    // println!("bouncing_ball:{:?}", bouncing_ball(40.0, 0.4, 10.0));
+    // println!("bouncing_ball:{:?}", bouncing_ball(10.0, 0.6, 10.0));
+
+    let words: Vec<String> = ["aabb", "abcd", "bbaa", "dada"].iter().map(|w| w.to_string()).collect();
+    println!(
+        "anagrams:{:?}",
+        anagrams("abba", &words)
+    );
 }
 
 #[cfg(test)]
