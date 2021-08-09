@@ -1,5 +1,7 @@
 use code_wars::{anagrams, array_diff, bouncing_ball, persistence, print, product_fib, rot13, sum_pairs};
 mod preloaded;
+mod decimal_to_factorial_and_back;
+
 
 fn main() {
     println!("{:?}", array_diff(vec![1,2,2,2,3], vec![2]));
