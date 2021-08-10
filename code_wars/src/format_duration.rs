@@ -87,7 +87,7 @@ pub fn format_duration(seconds: u64) -> String {
 
     // }
 
-    // return specific.concat()
+    // specific.concat()
     res.split_last()
         .map(|(last, others)| {
         others.join(", ") + " and " + last
