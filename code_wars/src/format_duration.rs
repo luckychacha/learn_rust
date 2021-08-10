@@ -94,3 +94,28 @@ pub fn format_duration(seconds: u64) -> String {
         })
         .unwrap()
 }
+
+// fn format_duration(seconds: u64) -> String {
+//     let result = [
+//         ("year", 31536000, 100000),
+//         ("day", 86400, 365),
+//         ("hour", 3600, 24),
+//         ("minute", 60, 60),
+//         ("second", 1, 60),
+//     ].iter()
+//     .map(|(unit, duration, modulo)| (seconds / duration % modulo, unit))
+//     .filter_map(|(duration, unit)| match duration {
+//         _ if duration == 1 => Some(format!("{} {}", duration, unit)),
+//         _ if duration != 0 => Some(format!("{} {}s", duration, unit)),
+//         _ => None,
+//     }).collect::<Vec<String>>();
+
+//     match result.len() {
+//         0 => String::from("now"),
+//         1 => result.join(""),
+//         _ => result
+//             .split_last()
+//             .map(|(r, l)| l.join(", ") + " and " + r)
+//             .unwrap(),
+//     }
+// }
