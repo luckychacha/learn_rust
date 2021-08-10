@@ -1,6 +1,7 @@
 use code_wars::{anagrams, array_diff, bouncing_ball, persistence, print, product_fib, rot13, sum_pairs};
 mod preloaded;
 mod decimal_to_factorial_and_back;
+mod format_duration;
 
 
 fn main() {
@@ -38,6 +39,8 @@ fn main() {
         )
     );
     println!("{:?}", res);
+
+    println!("{:?}", format_duration::format_duration(3662));
 }
 
 #[cfg(test)]
