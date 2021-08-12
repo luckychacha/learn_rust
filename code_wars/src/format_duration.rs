@@ -2,14 +2,14 @@ pub fn format_duration(seconds: u64) -> String {
     // Complete this function
     let mut seconds = seconds;
     if seconds <= 0 {
-        return String::from("")
+        return String::from("");
     }
     let mut res: Vec<String> = Vec::new();
     let mut count: u64 = 5;
 
-    let year: u64 = 365*24*60*60;
-    let day: u64 = 24*60*60;
-    let hour: u64 = 60*60;
+    let year: u64 = 365 * 24 * 60 * 60;
+    let day: u64 = 24 * 60 * 60;
+    let hour: u64 = 60 * 60;
     let minute: u64 = 60;
     let second: u64 = 1;
 
@@ -23,7 +23,7 @@ pub fn format_duration(seconds: u64) -> String {
                 } else {
                     res.push(format!("{} year", y));
                 }
-            } 
+            }
         }
         if count == 4 {
             let d = seconds / day;
@@ -34,7 +34,7 @@ pub fn format_duration(seconds: u64) -> String {
                 } else {
                     res.push(format!("{} day", d));
                 }
-            } 
+            }
         }
         if count == 3 {
             let y = seconds / hour;
@@ -45,7 +45,7 @@ pub fn format_duration(seconds: u64) -> String {
                 } else {
                     res.push(format!("{} hour", y));
                 }
-            } 
+            }
         }
         if count == 2 {
             let y = seconds / minute;
@@ -56,7 +56,7 @@ pub fn format_duration(seconds: u64) -> String {
                 } else {
                     res.push(format!("{} minute", y));
                 }
-            } 
+            }
         }
         if count == 1 {
             let y = seconds / second;
@@ -67,14 +67,14 @@ pub fn format_duration(seconds: u64) -> String {
                 } else {
                     res.push(format!("{} second", y));
                 }
-            } 
+            }
         }
         count -= 1;
     }
     if res.len() <= 2 {
-        return res.join(" and ")
+        return res.join(" and ");
     }
-    
+
     // let mut specific: Vec<String> = Vec::new();
     // for (idx, item) in res.iter().enumerate() {
     //     if idx < res.len() - 2 {
@@ -89,9 +89,7 @@ pub fn format_duration(seconds: u64) -> String {
 
     // specific.concat()
     res.split_last()
-        .map(|(last, others)| {
-            others.join(", ") + " and " + last
-        })
+        .map(|(last, others)| others.join(", ") + " and " + last)
         .unwrap()
 }
 
