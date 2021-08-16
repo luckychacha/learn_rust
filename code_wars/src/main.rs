@@ -4,8 +4,8 @@ mod format_duration;
 mod five_kyu;
 
 fn main() {
-    println!("{:?}", five_kyu::ips_between::ips_between("10.0.0.0", "10.0.0.50"));
-
+    sum_pairs([1, 4, 8, 7, 3, 15], 8);
+    
     println!("{:?}", five_kyu::primes::count_kprimes(5, 1000, 1100));
     println!("{:?}", five_kyu::primes::puzzle(143));
     // println!("{:?}", five_kyu::primes::puzzle(144));
