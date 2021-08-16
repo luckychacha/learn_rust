@@ -88,3 +88,18 @@ fn puzzle(s: i32) -> i32 {
         .sum::<usize>() as i32
 }
 */
+
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    fn testing_count_kprimes(k: i32, start: i32, nd: i32, exp: Vec<i32>) -> () {
+        assert_eq!(count_kprimes(k, start, nd), exp)
+    }
+
+    #[test]
+    fn basics_count_kprimes() {
+        testing_count_kprimes(5, 1000, 1100, vec![1020, 1026, 1032, 1044, 1050, 1053, 1064, 1072, 1092, 1100]);
+        testing_count_kprimes(12, 100000, 100100, vec![]);
+    }
+}
