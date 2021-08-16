@@ -4,9 +4,11 @@ mod format_duration;
 mod five_kyu;
 
 fn main() {
+    println!("{:?}", five_kyu::ips_between::ips_between("10.0.0.0", "10.0.0.50"));
+
     println!("{:?}", five_kyu::primes::count_kprimes(5, 1000, 1100));
     println!("{:?}", five_kyu::primes::puzzle(143));
-    println!("{:?}", five_kyu::primes::puzzle(144));
+    // println!("{:?}", five_kyu::primes::puzzle(144));
 
     println!("{:?}", array_diff(vec![1,2,2,2,3], vec![2]));
 
