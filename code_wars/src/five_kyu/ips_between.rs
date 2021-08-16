@@ -1,3 +1,5 @@
+use std::net::Ipv4Addr;
+
 /// examples
 /// ips_between("10.0.0.0", "10.0.0.50") ==  50 
 /// ips_between("10.0.0.0", "10.0.1.0")  == 256 
@@ -29,13 +31,18 @@
 // }
 
 pub fn ips_between(start: &str, end: &str) -> u32 {
-    start.split('.')
-        .zip(end.split('.'))
-        .map(|(x, y)| (x.parse::<i64>().unwrap(), y.parse::<i64>().unwrap()))
-        .enumerate()
-        .fold(0, |total, (idx, (x, y))| {
-            total + ((y * 256_i64.pow((3 - idx) as u32)) - (x * 256_i64.pow((3 - idx) as u32)))
-        }) as u32
+    let start: u32 = start.parse::<Ipv4Addr>().unwrap().into();
+    let end: u32 = end.parse::<Ipv4Addr>().unwrap().into();
+    end - start
+
+
+    // start.split('.')
+    //     .zip(end.split('.'))
+    //     .map(|(x, y)| (x.parse::<i64>().unwrap(), y.parse::<i64>().unwrap()))
+    //     .enumerate()
+    //     .fold(0, |total, (idx, (x, y))| {
+    //         total + ((y * 256_i64.pow((3 - idx) as u32)) - (x * 256_i64.pow((3 - idx) as u32)))
+    //     }) as u32
 }
 
 #[cfg(test)]
