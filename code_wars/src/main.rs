@@ -4,7 +4,7 @@ mod format_duration;
 mod five_kyu;
 
 fn main() {
-    sum_pairs([1, 4, 8, 7, 3, 15], 8);
+    sum_pairs(&[1, 4, 8, 7, 3, 15], 8);
     
     println!("{:?}", five_kyu::primes::count_kprimes(5, 1000, 1100));
     println!("{:?}", five_kyu::primes::puzzle(143));
