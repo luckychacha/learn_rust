@@ -2,6 +2,7 @@ use code_wars::{anagrams, array_diff, bouncing_ball, persistence, print, product
 mod preloaded;
 mod format_duration;
 mod five_kyu;
+mod four_kyu;
 
 fn main() {
     sum_pairs(&[1, 4, 8, 7, 3, 15], 8);
