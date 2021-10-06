@@ -6,5 +6,6 @@ members = [
     "traffic_light",
     "calculate_sum",
     "calculate_area",
-    "code_wars"
+    "code_wars",
+    "from_mvp",
 ]
