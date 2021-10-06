@@ -21,7 +21,10 @@
 //      - 在编译时就完成了，运行时没有额外的性能开销
 // 解引用与可变性
 // - 可使用 DerefMut trait 重载可变引用的 * 运算符
-// - 在类型和 trait 在下列三种情况发生时：Rust 会执行 deref coercion
+// - 在类型和 trait 在下列三种情况发生时：Rust 会执行 deref coercion：
+//      1.当 T: Deref<Target=U>，允许 &T 转换为 &U
+//      2.当 T: DerefMut<Target=U>，允许 &mut T 转换为 &mut U
+//      3.当 T: Deref<Target=U>，允许 &mut T 转换为 &U【可变引用变为不可变引用】
 use std::ops::Deref;
 
 // MyBox 是个元组！
