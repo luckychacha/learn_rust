@@ -11,5 +11,6 @@ fn main() {
 
     // no_fear_concurrent_and_parallel::thread_spawn_init::thread_spawn_init();
     // no_fear_concurrent_and_parallel::thread_spawn_with_move::move_demo();
-    no_fear_concurrent_and_parallel::cross_thread_send_message::channel_demo();
+    // no_fear_concurrent_and_parallel::cross_thread_send_message::channel_demo();
+    no_fear_concurrent_and_parallel::share_status_concurrency::mutext_demo();
 }
