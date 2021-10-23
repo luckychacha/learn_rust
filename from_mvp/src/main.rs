@@ -46,11 +46,13 @@ fn main() {
     // post.approve();
     // println!("{}", post.content());
     // 优化后的 Post
-    let mut enhanced_post_draft = Post::new();
-    enhanced_post_draft.add_text("enhanced post content");
-    let enhanced_post_pending = enhanced_post_draft.request_review();
-    let enhanced_post = enhanced_post_pending.approve();
-    println!("{}", enhanced_post.content());
+    // let mut enhanced_post_draft = Post::new();
+    // enhanced_post_draft.add_text("enhanced post content");
+    // let enhanced_post_pending = enhanced_post_draft.request_review();
+    // let enhanced_post = enhanced_post_pending.approve();
+    // println!("{}", enhanced_post.content());
+
+    pattern_match::pattern_match::patter_demo();
 }
 
 pub struct SelectBox {
