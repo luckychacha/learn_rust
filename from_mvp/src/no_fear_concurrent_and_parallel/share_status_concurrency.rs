@@ -29,7 +29,7 @@ use std::{sync::{Arc, Mutex}, thread};
 //      - 我们使用 Mutex<T> 来改变 Arc<T> 里面的内容
 //      - 注意 Mutex<T> 有死锁的风险，例如 a 线程先锁 a 后锁 b，b 线程相反，二者就会死锁。
 
-pub fn mutext_demo() {
+pub fn mutex_demo() {
     let m = Mutex::new(5);
 
     {
