@@ -6,6 +6,7 @@ mod smart_pointers;
 pub mod no_fear_concurrent_and_parallel;
 pub mod object_oriented;
 pub mod pattern_match;
+pub mod advanced_features;
 
 fn main() {
     // smart_pointers::box_concept::box_concept();

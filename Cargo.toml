@@ -8,4 +8,7 @@ members = [
     "calculate_area",
     "code_wars",
     "from_mvp",
+    "hello_macro",
+    "hello_macro_derive",
+    "pancakes",
 ]
