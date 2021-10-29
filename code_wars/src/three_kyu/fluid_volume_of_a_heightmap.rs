@@ -21,7 +21,12 @@
 
 fn volume(heightmap: &Vec<Vec<i32>>) -> i32 {
     let height = heightmap.len();
-    let width = heightmap.first()?.len();
+    
+    match heightmap.first() {
+        Some(it) => it,
+        None => return None,
+    }
+
     for item in heightmap {
 
     }

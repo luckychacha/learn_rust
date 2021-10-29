@@ -2,7 +2,7 @@
 //  Box<T>是最简单的智能指针：
 //  - 允许你在 heap 上存储数据【而不是 stack】
 //  - stack 上指向 heap 数据的指针
-//  - 没有想能开销
+//  - 没有性能开销
 //  - 没有其他额外的功能
 //  - 实现了 Deref trait 和 Drop trait
 //  Box<T> 的常用场景
