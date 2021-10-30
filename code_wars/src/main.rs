@@ -3,6 +3,7 @@ mod preloaded;
 mod format_duration;
 mod five_kyu;
 mod four_kyu;
+mod three_kyu;
 
 fn main() {
     sum_pairs(&[1, 4, 8, 7, 3, 15], 8);
