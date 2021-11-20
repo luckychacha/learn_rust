@@ -12,4 +12,7 @@ members = [
     "hello_macro_derive",
     "pancakes",
     "hello",
+    "demos",
+    "scrape_url",
+    "httpie",
 ]

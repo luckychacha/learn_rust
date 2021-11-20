@@ -16,7 +16,7 @@ fn main() {
     // smart_pointers::ref_cell_intro::ref_cell_concept();
     // smart_pointers::cycle_reference_cause_overflow::cycle_reference_cause_overflow();
 
-    // no_fear_concurrent_and_parallel::thread_spawn_init::thread_spawn_init();
+    no_fear_concurrent_and_parallel::thread_spawn_init::thread_spawn_init();
     // no_fear_concurrent_and_parallel::thread_spawn_with_move::move_demo();
     // no_fear_concurrent_and_parallel::cross_thread_send_message::channel_demo();
     // no_fear_concurrent_and_parallel::share_status_concurrency::mutex_demo();
@@ -53,7 +53,7 @@ fn main() {
     // let enhanced_post = enhanced_post_pending.approve();
     // println!("{}", enhanced_post.content());
 
-    pattern_match::pattern_match::patter_demo();
+    // pattern_match::pattern_match::patter_demo();
 }
 
 pub struct SelectBox {

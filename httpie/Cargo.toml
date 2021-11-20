@@ -1,0 +1,16 @@
+[package]
+name = "httpie"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1" # deal error
+clap = "3.0.0-beta.5" # deal command
+colored = "2" # terminal colorful print
+jsonxf = "1.1" # JSON pretty print
+mime = "0.3" # deal mime type
+reqwest = { version = "0.11", features = ["json"] } # http client
+tokio = { version = "1.13.0", features = ["full"] } # async runtime
+syntect = "4"
