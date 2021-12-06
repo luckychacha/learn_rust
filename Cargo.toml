@@ -15,4 +15,5 @@ members = [
     "demos",
     "scrape_url",
     "httpie",
+    "thumbor",
 ]
