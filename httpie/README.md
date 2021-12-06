@@ -2,7 +2,7 @@
 
 ## Introduce
 
-###  A naive httpie implementation with Rust
+###  A naive httpie implementation with Rust.
 
 ## Commands
 
