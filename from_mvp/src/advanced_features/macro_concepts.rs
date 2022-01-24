@@ -1,4 +1,4 @@
-use proc_macro::TokenStream;
+// use proc_macro::TokenStream;
 
 // 宏在 Rust 里指的是一组相关特性的集合称谓：
 //  - 使用 macro_rules! 构建的声明宏【declarative macro】
@@ -41,10 +41,10 @@ use proc_macro::TokenStream;
 //  - 函数宏可以接受 TokenStream 作为参数
 //  - 与另外两种过程宏一样，在定义中使用 Rust 代码来操作 TokenStream
 
-#[some_attribute]
-pub fn some_name(input: TokenStream) -> TokenStream {
+// #[some_attribute]
+// pub fn some_name(input: TokenStream) -> TokenStream {
 
-}
+// }
 
 // 属性宏
 // #[route(GET, "/")]

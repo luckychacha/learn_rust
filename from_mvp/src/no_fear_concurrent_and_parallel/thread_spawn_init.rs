@@ -9,12 +9,13 @@ pub fn thread_spawn_init() {
     //     }
     // });
 
-   let handle = thread::spawn(|| {
-        for i in 1..10 {
-            println!("hi number {} from the spawn thread!", i);
-            thread::sleep(Duration::from_millis(1));
-        }
-    });
+//    let handle = thread::spawn(|| {
+//         for i in 1..10 {
+//             println!("hi number {} from the spawn thread!", i);
+//             thread::sleep(Duration::from_millis(1));
+//         }
+//     });
+
 
     // 主线程继续执行，主线程结束之后，离开作用域时，子线程会直接结束。
     for i in 1..5 {
@@ -38,5 +39,6 @@ pub fn thread_spawn_init() {
     // hi number 3 from the main thread
     // hi number 4 from the main thread
     // 即 handle 的逻辑都执行完了，才往下执行。
-    handle.join().unwrap();
+    // handle.join().unwrap();
+
 }
