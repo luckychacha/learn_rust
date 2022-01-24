@@ -1,3 +1,6 @@
+use core::slice::SlicePattern;
+use std::slice;
+
 pub fn last_digit(lst: &[u64]) -> u64 {
     if lst.len() < 2 {
         return 1;
